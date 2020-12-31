@@ -80,11 +80,11 @@ export default {
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-start;
-      background: red;
-
-      // #img-location {
-      //   background: red;
-      // }
+      p,
+      span {
+        background: #f6f6f6;
+        color: #fff;
+      }
     }
   }
 }
