@@ -5,5 +5,5 @@
 
   [[redirects]]
   from = "/https://getimage.netlify.app/api.unsplash.com/*"
-  to = "/https://api.unsplash.com"
+  to = "/index.html"
   status = 200
