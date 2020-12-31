@@ -1,20 +1,27 @@
 <template>
   <div>
     <div class="images">
-      <div
+      <lazy-background
+        id="lazy-loader"
         v-for="img in currentImage"
         :key="img.id"
-        :style="{ backgroundImage: `url(${img.urls.full})` }"
+        :src="img.urls.full"
       >
-        <p>{{ img.user.first_name }} {{ img.user.last_name }}</p>
+        <div slot="content">
+          <p>{{ img.user.first_name }} {{ img.user.last_name }}</p>
 
-        <span>{{ img.user.location }}</span>
-      </div>
+          <span>{{ img.user.location }}</span>
+        </div>
+      </lazy-background>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from "vue";
+import VueLazyImageLoading from "vue-lazy-image-loading";
+
+Vue.use(VueLazyImageLoading);
 export default {
   name: "Home",
   props: {
@@ -59,19 +66,26 @@ export default {
   right: 15%;
   top: 120px;
 
-  div {
+  #lazy-loader {
     border-radius: 5px;
     padding: 10px;
     background-position: 50% 50%;
-    background-color: blue;
-    color: #fff;
+    background-color: #b4b4b4;
+    color: #000;
     height: 300px;
     width: 100%;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      background: red;
+
+      // #img-location {
+      //   background: red;
+      // }
+    }
   }
 }
 </style>
