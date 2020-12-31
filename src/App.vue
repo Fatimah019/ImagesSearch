@@ -32,7 +32,7 @@ export default {
 
   methods: {
     showPhoto: function(query) {
-      const accessToken = process.env.VUE_APP_ACCESSTOKEN;
+      const accessToken = "A3F7DkBC723hfY2m0QUuB290UqyWu_1WGQpY-KpVBZg";
       axios({
         method: "get",
         url: "https://api.unsplash.com/search/photos?page=1&per_page=8",
