@@ -71,7 +71,7 @@ export default {
     border-radius: 5px;
     padding: 10px;
     background-position: 50% 50%;
-    background-color: #b4b4b4;
+    background-color: #f6f6f6;
     color: #000;
     height: 300px;
     width: 100%;
@@ -80,7 +80,6 @@ export default {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-
     div {
       // background: red;
       // p,
