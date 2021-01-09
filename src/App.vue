@@ -8,26 +8,32 @@
         </label>
       </form>
     </div>
-    <Home v-if="images.length" :currentImage="images" />
+    <div v-if="loadImage">
+      <Home v-if="images.length" :currentImage="images" />
+    </div>
+    <div v-else>
+      <Main />
+    </div>
   </div>
 </template>
 
 <script>
 import Home from "./components/Home.vue";
+import Main from "./components/Main.vue";
 import axios from "axios";
 require("dotenv").config();
 
 export default {
   name: "App",
-
   components: {
     Home,
+    Main,
   },
 
   data: () => ({
     keyword: "",
     images: [],
-    imageLoad: "",
+    loadImage: false,
   }),
 
   methods: {
@@ -44,6 +50,7 @@ export default {
         },
       })
         .then((response) => {
+          this.loadImage = true;
           // console.log(response.data.results);
           this.images = response.data.results;
         })

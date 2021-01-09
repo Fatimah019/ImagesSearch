@@ -7,7 +7,7 @@
         :key="img.id"
         :src="img.urls.full"
       >
-        <div slot="content">
+        <div slot="content" id="img-info">
           <p>{{ img.user.first_name }} {{ img.user.last_name }}</p>
 
           <span>{{ img.user.location }}</span>
@@ -22,6 +22,7 @@ import Vue from "vue";
 import VueLazyImageLoading from "vue-lazy-image-loading";
 
 Vue.use(VueLazyImageLoading);
+
 export default {
   name: "Home",
   props: {
@@ -75,16 +76,18 @@ export default {
     height: 300px;
     width: 100%;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
     div {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      p,
-      span {
-        background: #f6f6f6;
-        color: #fff;
-      }
+      // background: red;
+      // p,
+      // span {
+      //   background: #f6f6f6;
+      //   color: #fff;
+      // }
     }
   }
 }
